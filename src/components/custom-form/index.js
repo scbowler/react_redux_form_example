@@ -4,7 +4,7 @@ import Input from './input';
 
 class CustomForm extends Component {
     handleFormSubmit(formValues) {
-        console.log('On Submit Form Values:', formValues);
+        console.log('On Submit Custom Form Values:', formValues);
     }
 
     resetForm() {

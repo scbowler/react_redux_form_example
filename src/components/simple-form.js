@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 
 class SimpleForm extends Component {
     handleFormSubmit(formValues){
-        console.log('On Submit Form Values:', formValues);
+        console.log('On Submit Simple Form Values:', formValues);
     }
 
     resetForm(){
