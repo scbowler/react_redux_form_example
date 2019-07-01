@@ -1,13 +1,21 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
+import CustomForm from './custom-form';
+import ErrorHandlingForm from './error-handling-form';
+import Nav from './nav';
+import SimpleForm from './simple-form';
 import '../assets/css/app.scss';
-import logo from '../assets/images/logo.svg';
+import '../assets/css/form.scss';
 
 const App = () => (
-    <div>
-        <div className="app">
-            <img src={logo} className="logo rotate"/>
-            <h1>Welcome To React</h1>
-        </div>
+    <div className="container">
+        <Nav />
+
+        <h1 className="center">Redux Form Examples</h1>
+
+        <Route path="/" exact component={SimpleForm} />
+        <Route path="/custom-form" component={CustomForm} />
+        <Route path="/error-handling-form" component={ErrorHandlingForm} />
     </div>
 );
 
