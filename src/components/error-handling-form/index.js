@@ -5,6 +5,8 @@ import InputWithErrors from './input-with-errors';
 class ErrorHandlingForm extends Component {
     handleFormSubmit(formValues) {
         console.log('On Submit Form Values:', formValues);
+
+        this.resetForm();
     }
 
     resetForm() {
@@ -12,12 +14,12 @@ class ErrorHandlingForm extends Component {
     }
 
     render() {
-        const { handleSubmit } = this.props;
+        const { handleSubmit, valid } = this.props;
 
         return (
             <div>
                 <h2 className="center">Error Handling Form</h2>
-                <form onSubmit={handleSubmit(this.handleFormSubmit)}>
+                <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
                     <Field label="Name" name="name" component={InputWithErrors} />
                     
                     <Field label="Email" name="email" component={InputWithErrors} autoComplete="email" />
@@ -28,7 +30,7 @@ class ErrorHandlingForm extends Component {
 
                     <div className="form-actions">
                         <button onClick={this.resetForm.bind(this)} type="button">Reset Form</button>
-                        <button>Sign Up</button>
+                        <button className={valid ? 'form-valid' : 'form-invalid'}>Sign Up</button>
                     </div>
                 </form>
             </div>
