@@ -1,7 +1,7 @@
 {
-  "name": "react_starter",
+  "name": "react_redux_form_example",
   "version": "1.1.0",
-  "description": "Starting setup for react redux project",
+  "description": "Example of building forms in ReactJS with Redux Form",
   "main": "index.js",
   "scripts": {
     "start": "node dev_server.js",
@@ -12,13 +12,14 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Learning-Fuze/react_starter.git"
+    "url": "https://github.com/scbowler/react_redux_form_example.git"
   },
   "dependencies": {
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-form": "^8.2.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
