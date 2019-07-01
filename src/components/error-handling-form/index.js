@@ -4,7 +4,7 @@ import InputWithErrors from './input-with-errors';
 
 class ErrorHandlingForm extends Component {
     handleFormSubmit(formValues) {
-        console.log('On Submit Form Values:', formValues);
+        console.log('On Submit Error Handling Form Values:', formValues);
 
         this.resetForm();
     }
