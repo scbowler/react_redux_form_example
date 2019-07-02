@@ -36,6 +36,37 @@ class SimpleForm extends Component {
     }
 }
 
+function validate(formValues) {
+    const { name, email, password, confirmPassword } = formValues;
+    const emailRegEx = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    const errors = {};
+
+    if (!name) {
+        errors.name = 'Please enter your name';
+    } else if (name.length < 2) {
+        errors.name = 'Name must be at least 2 characters long';
+    }
+
+    if (!email) {
+        errors.email = 'Please enter your email';
+    } else if (!emailRegEx.test(email)) {
+        errors.email = 'Please enter a valid email address. Example: me@example.com';
+    }
+
+    if (!password) {
+        errors.password = 'Please choose a password';
+    } else if (password.length < 6) {
+        errors.password = 'Password must be at least 6 characters';
+    }
+
+    if (password !== confirmPassword) {
+        errors.confirmPassword = 'Passwords do not match';
+    }
+
+    return errors;
+}
+
 export default reduxForm({
-    form: 'simple-form'
+    form: 'simple-form',
+    validate: validate
 })(SimpleForm);
